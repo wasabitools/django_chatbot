@@ -75,10 +75,10 @@
         <li class="message received">
           <div class="message-text">
             <div class="message-sender">
-              <b>AI Chatbot</b>
+              <b>Rude Chatbot</b>
             </div>
             <div class="message-content">
-              Hi, I am your AI Chatbot, you can ask me anything.
+              What to you want from me? Again....?!
             </div>
           </div>
         </li>
@@ -106,7 +106,7 @@
   const messageInput = document.querySelector('.message-input')
 
   messageForm.addEventListener('submit', (event) =>{
-    event.preventDefault(); //do not refresh
+    event.preventDefault(); //This does not refresh the page
 
     const message = messageInput.value.trim();
     if (message.length === 0){
@@ -124,9 +124,9 @@
           ${message}
         </div>
       </div>`;
-    messageList.appendChild(messageItem);
+    messagesList.appendChild(messageItem);
 
-    messageInput.value=""; //message bar empty
+    messageInput.value=""; //This keeps the message bar empty
 
     fetch('', {
       method: 'POST',
@@ -147,10 +147,13 @@
             <b>AI Chatbot</b>
           </div>
           <div class="message-content">
+            ${response} <!-- This should display the chatbot response -->
+          </div>
         </div>`;
-        messageList.appendChild(messageItem);
+        messagesList.appendChild(messageItem);
       });
     });
 </script>
+
 
 {% endblock %}

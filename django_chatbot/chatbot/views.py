@@ -6,6 +6,6 @@ from django.shortcuts import render
 def chatbot(request):
     if request.method == 'POST':
         message = request.POST.get('message')
-        response = "I'm fucking talking to you."
+        response = "Oh Gawd!"
         return JsonResponse({'message': message, 'response': response})
     return render(request, "chatbot.html")
